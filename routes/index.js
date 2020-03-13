@@ -1,7 +1,6 @@
 const tweetsController = require("../controllers/tweetsController.js");
 const adminController = require("../controllers/adminController.js");
 const userController = require("../controllers/userController.js");
-const chatController = require("../controllers/chatController.js");
 module.exports = (app, passport) => {
   // 記得這邊要接收 passport
   const authenticated = (req, res, next) => {
@@ -30,9 +29,6 @@ module.exports = (app, passport) => {
     authenticated,
     tweetsController.getTweet
   );
-
-  app.get("/chat", authenticated, (req, res) => res.redirect("/chat/:id"));
-  app.get("/chat/:id", authenticated, chatController.creatChat);
 
   app.get("/signup", userController.signUpPage);
   app.post("/signup", userController.signUp);
