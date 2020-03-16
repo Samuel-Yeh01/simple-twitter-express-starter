@@ -6,27 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
-        reference: {
-          model: "Tweets",
-          key: "UserId"
-        },
-        reference: {
-          model: "Likes",
-          key: "UserId"
-        },
-        reference: {
-          model: "Replies",
-          key: "UserId"
-        },
-        reference: {
-          model: "Followships",
-          key: "followerId"
-        },
-        reference: {
-          model: "Followships",
-          key: "followingId"
-        }
+        type: Sequelize.INTEGER
       },
       email: {
         type: Sequelize.STRING

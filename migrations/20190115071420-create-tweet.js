@@ -6,15 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
-        reference: {
-          model: "Replies",
-          key: "TweetId"
-        },
-        reference: {
-          model: "Likes",
-          key: "TweetId"
-        }
+        type: Sequelize.INTEGER
       },
       UserId: {
         type: Sequelize.INTEGER
